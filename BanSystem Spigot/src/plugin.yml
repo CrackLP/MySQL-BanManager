@@ -1,0 +1,16 @@
+name: BanManager
+version: 1.2
+author: CrackLPYT
+main: de.crack.lp.main.Main
+
+commands:
+  ban:
+    permission: banmanager.ban
+  tempban:
+    permission: banmanager.tempban
+  check:
+    permission: banmanager.check
+  unban:
+    permission: banmanager.unban
+  kick:
+    permission: banmanager.kick
