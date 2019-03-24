@@ -46,14 +46,11 @@ public class MySQL {
 	}
 
 	public static void createTable() {
-		/*
-		 * 
-		 * Syntax: Spielername, UUID, Ende, Grund
-		 * 
-		 */
 		if(isConnected()) {
 			try {
 			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS BannedPlayers (Spielername VARCHAR(100), UUID VARCHAR(100), Ende VARCHAR(100), Grund VARCHAR(100))");
+			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS BanCounts (Spielername VARCHAR(100), UUID VARCHAR(100), Count INT)");
+			con.createStatement().executeUpdate("CREATE TABLE IF NOT EXISTS MutedPlayers (Spielername VARCHAR(100), UUID VARCHAR(100), Ende VARCHAR(100), Grund VARCHAR(100))");
 			} catch (SQLException e) {
 			e.printStackTrace();
 			}

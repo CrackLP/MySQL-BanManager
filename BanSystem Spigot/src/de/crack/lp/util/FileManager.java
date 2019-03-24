@@ -32,20 +32,19 @@ public class FileManager {
 		FileConfiguration cfg = getConfigFileConfiguration();
 		cfg.options().copyDefaults(true);
 		cfg.addDefault("Prefix", "&8[&6BanManager&8]");
-		cfg.addDefault("Kick-Message", "&7--------------------" +
-				"\n&cDu wurdest von diesem Netzwerk geworfen!\n" +
-				"\n" +
-				"&4Grund: &9&l%reason%\n" +
-				"\n" +
-				"&eDu wurdest von &6&l%staffName% &egekickt!\n" +
-				"&7--------------------");
-		cfg.addDefault("Ban-Message", "&cDu wurdest von diesem Netzwerk gebannt!\n" + 
-				"\n" + 
-				"&3Grund: &e%reason%\n" + 
-				"\n" + 
-				"&3Du wirst am &e%time% &3entbannt\n" + 
-				"\n" + 
-				"&3Du kannst unter &c&nDeinServer.de&3 einen Entbannungsantrag stellen!");
+		cfg.addDefault("Kick-Message",
+						"&7--------------------" +
+						"\n&cDu wurdest von diesem Netzwerk geworfen!\n" +
+						"\n" + 
+						"&4Grund: &9&l%reason%\n" + "\n" + "&eDu wurdest von &6&l%staffName% &egekickt!\n" +  
+						"&7--------------------");
+		cfg.addDefault("Ban-Message",
+						"&cDu wurdest von diesem Netzwerk gebannt!\n" +
+						"\n" + "&3Grund: &e%reason%\n" +
+						"\n" +
+						"&3Du wirst am &e%time% &3entbannt\n" +
+						"\n" +
+						"&3Du kannst unter &c&nDeinServer.de&3 einen Entbannungsantrag stellen!");
 		cfg.addDefault("Auto-Updater", true);
 		try {
 			cfg.save(getConfigFile());
@@ -56,7 +55,7 @@ public class FileManager {
 
 	public static void readConfig() {
 		FileConfiguration cfg = getConfigFileConfiguration();
-		Main.getInstance().prefix = ChatColor.translateAlternateColorCodes('&', cfg.getString("Prefix")) + " Â§r";
+		Main.getInstance().prefix = ChatColor.translateAlternateColorCodes('&', cfg.getString("Prefix")) + " §r";
 	}
 
 	public static void setStandardMySQL() {

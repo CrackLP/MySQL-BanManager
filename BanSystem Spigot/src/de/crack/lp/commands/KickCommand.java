@@ -25,9 +25,9 @@ public class KickCommand implements CommandExecutor {
 		if (cmd.getName().equalsIgnoreCase("kick")) {
 			if (p.hasPermission("banmanager.kick")) {
 				if (args.length == 0) {
-					p.sendMessage(plugin.prefix + "Â§7Nutze /kick <Spieler> <Grund>");
+					p.sendMessage(plugin.prefix + "§7Nutze /kick <Spieler> <Grund>");
 				} else if (args.length == 1) {
-					p.sendMessage(plugin.prefix + "Â§7Nutze /kick <Spieler> <Grund>");
+					p.sendMessage(plugin.prefix + "§7Nutze /kick <Spieler> <Grund>");
 				} else if (args.length == 2) {
 					Player target = Bukkit.getPlayer(args[0]);
 					if (target != null) {
@@ -42,14 +42,14 @@ public class KickCommand implements CommandExecutor {
 						target.kickPlayer(ChatColor.translateAlternateColorCodes('&',
 								FileManager.getConfigFileConfiguration().getString("Kick-Message")
 										.replace("%reason%", Grund).replace("%staffName%", p.getDisplayName())));
-						p.sendMessage(plugin.prefix + "Â§cDu hast den Spieler Â§9" + target.getDisplayName()
-								+ "Â§cerfolgreich vom Server gekickt!");
+						p.sendMessage(plugin.prefix + "§cDu hast den Spieler §9" + target.getDisplayName()
+								+ "§cerfolgreich vom Server gekickt!");
 
 						for (Player team : Bukkit.getOnlinePlayers()) {
 							if (team.hasPermission("banmanager.global")) {
-								team.sendMessage(plugin.prefix + "Â§7Der Spieler Â§c" + target.getDisplayName()
-										+ "Â§7 wurde vonÂ§c " + p.getDisplayName() + " Â§7mit dem Grund Â§c" + Grund + Grund
-										+ "Â§7vom Server geworfen!");
+								team.sendMessage(plugin.prefix + "§7Der Spieler §c" + target.getDisplayName()
+										+ "§7 wurde von§c " + p.getDisplayName() + " §7mit dem Grund §c" + Grund + Grund
+										+ "§7vom Server geworfen!");
 							}
 
 						}

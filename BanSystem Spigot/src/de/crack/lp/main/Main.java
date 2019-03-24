@@ -28,7 +28,7 @@ public class Main extends JavaPlugin {
 		MySQL.connect();
 		MySQL.createTable();
 		
-		Bukkit.getConsoleSender().sendMessage(prefix + "ง4plugin enabled!");
+		Bukkit.getConsoleSender().sendMessage(prefix + "ยง4plugin enabled!");
 	}
 
 	public void onDisable() {
